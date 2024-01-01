@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 5px;
+   box-shadow: 0 0 5px black;
+}
+button{
+    padding: 5px 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+#displayvalue {
+    font-size: 25px;
+    padding: 5px 15px;
+    border: 1px solid black;
+  }

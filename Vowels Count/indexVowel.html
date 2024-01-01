@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowels count in name</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: darkslategrey;
+            box-shadow: 0 0 150px rgb(118, 226, 104);
+            margin: 200px;
+            padding: 40px 55px;
+        }
+        body h1{
+            margin-bottom: 25px;
+            color: limegreen;
+            font-size: 45px;
+            font-weight: 800;
+        }
+        label{
+            font-size: 30px;
+            font-weight: 600;
+            color: darkcyan;
+        }
+        label:hover{
+            font-size: 40px;
+        }
+        input{
+            width: 300px;
+            padding: 8px 5px;
+            border-radius: 8px;
+        }
+        input:hover{
+            font-size: 40px;
+            padding: 8px 5px;
+        }
+        button{
+            padding: 10px 8px;
+            width: 100px;
+            margin-top: 25px;
+            border-radius: 10px;
+            color: rgb(201, 31, 68);
+        }
+        #blankContainer{
+            margin-top: 50px;
+            font-size: 30px;
+            font-weight: 900;
+            color: mediumseagreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-shadow">
+        <h1>Count Vowels in Your Name</h1>
+
+        <form>
+            <label for="text">Enter Your Name :</label>
+            <input type="text" id="inputName" name="name" placeholder="Enter your Name">
+        </form>
+
+        <div>
+            <button id="firstButton" onclick="countvowel()">Count</button>
+            <button onclick="window.location.reload()">Refresh</button>
+        </div>
+
+        <div id="blankContainer"></div>
+    </div>
+</body>
+<script src="./scriptVowel.js"></script>
+</html>

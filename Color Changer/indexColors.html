@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixer</title>
+    
+
+    <!-- CSS file is here -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+        body div h1{
+            margin-left: 120px;
+            color: brown;
+        }
+        /* body div:hover{
+            font-size: 50px;
+        } */
+        label{
+            display: block;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: 700;
+            color: #65e991;
+        }
+        label:hover{
+            font-size: 40px;
+        }
+        input{
+            padding: 8px 18px;
+            border-radius: 8px;
+            border-color: rgb(245, 100, 100);
+        }
+        input:hover{
+            box-shadow: 0 0 150px rgba(48, 42, 42, 0.753);
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 200px;
+            background-color:#e9eff0;
+        }
+        .boxShadow{
+            box-shadow: 0 0 50px black;
+            padding: 30px 80px;
+            background-color: white;
+            border-radius: 8px;
+        }
+        button{
+            padding: 8px 18px;
+            border-radius: 8px;
+            background-color: #65e991;
+            color: white;
+            font-size: 18px;
+            border: none;
+            margin-right: 100%;
+            margin-top: 8px;
+        }
+        button:hover{
+            font: 40px;
+        }
+        #resultantColorBox{
+            width: 200px;
+            height: 100px;
+            margin: 20px;
+            border: 1px solid black;
+        }
+        #resultantColorName{
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<!-- HTML Code is start here -->
+<body>
+    <div class="boxShadow">
+        <h1>Color Mixer</h1>
+        <form id="inputColorName">
+            <label for="text">Put color1:
+            <input type="text" id="color1">
+            </label>
+            
+            <label for="text">Put color2:
+            <input type="text" id="color2">
+            </label>
+
+            <button id="mixColor">MixColor</button>
+        </form>
+    </div>
+    <div id="resultantColorBox"></div>
+    <div id="resultantColorName">Output Color :</div>
+</body>
+<script src="./scriptColors.js">hii</script>
+</html>

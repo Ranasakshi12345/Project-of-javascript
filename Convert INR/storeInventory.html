@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Store Inventory Converter</title>
+</head>
+<body>
+  <form id="inventory-form">
+    <label for="item1-price">Item 1 Price (USD):</label>
+    <input type="number" id="item1-price" name="item1-price"><br>
+    <label for="item2-price">Item 2 Price (USD):</label>
+    <input type="number" id="item2-price" name="item2-price"><br>
+    <label for="item3-price">Item 3 Price (USD):</label>
+    <input type="number" id="item3-price" name="item3-price"><br>
+    <button type="button" id="convert-button">Convert to INR</button>
+  </form>
+
+  <div id="result-container"></div>
+
+  <script>
+    const exchangeRate = 80; // 1 USD to 80 INR
+
+    const convertPricesToRupees = (prices) => {
+      return Object.keys(prices).map((key) => ({
+         // Object.keys() method to iterate over each key (i.e., each item) in the object. And 
+        // The map() method is used to create an array of these new objects
+
+        [key]: prices[key] * exchangeRate,
+      })).reduce((acc, curr) => ({...acc, ...curr}), {}); //   the reduce() method is used to combine them into a single object.
+    };
+
+    const inventoryForm = document.getElementById('inventory-form');
+    const convertButton = document.getElementById('convert-button');
+    const resultContainer = document.getElementById('result-container');
+
+    convertButton.addEventListener('click', () => {
+      const item1Price = Number(document.getElementById('item1-price').value);
+      const item2Price = Number(document.getElementById('item2-price').value);
+      const item3Price = Number(document.getElementById('item3-price').value);
+
+      const pricesInUSD = {
+        item1: item1Price,
+        item2: item2Price,
+        item3: item3Price,
+      };
+
+      const pricesInRupees = convertPricesToRupees(pricesInUSD);
+
+      let resultHTML = '<ul>';
+
+      for (const [key, value] of Object.entries(pricesInRupees)) {
+        resultHTML += `<li>${key}: ${value} INR</li>`;
+      }
+
+      resultHTML += '</ul>';
+
+      resultContainer.innerHTML = resultHTML;
+    });
+  </script>
+</body>
+</html>
